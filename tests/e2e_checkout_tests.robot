@@ -30,6 +30,7 @@ Complete End To End Checkout Flow
     Click Button               id=checkout
     
     # Step 4: Fill customer details and continue
+    Wait Until Element Is Visible    id=first-name    timeout=10s
     Complete Checkout Form     Ahmed    Testing    12345
     Page Should Contain        Checkout: Overview
     
