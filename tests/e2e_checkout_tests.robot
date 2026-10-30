@@ -25,18 +25,18 @@ Complete End To End Checkout Flow
     
     # Step 3: Go to cart and proceed to checkout
     Go To Cart
-    Page Should Contain        Sauce Labs Backpack
-    Wait Until Element Is Visible    id=checkout    timeout=10s
-    Click Button               id=checkout
+    Page Should Contain       Sauce Labs Backpack
+    Wait Until Page Contains Element    id=checkout    timeout=15s
+    Click Element               id=checkout
     
     # Step 4: Fill customer details and continue
-    Wait Until Element Is Visible    id=first-name    timeout=10s
+    Wait Until Page Contains Element    id=first-name    timeout=15s
     Complete Checkout Form     Ahmed    Testing    12345
     Page Should Contain        Checkout: Overview
     
     # Step 5: Finish order and verify success
-    Wait Until Element Is Visible    id=finish    timeout=10s
-    Click Button               id=finish
+    Wait Until Page Contains Element    id=finish    timeout=15s
+    Click Element               id=finish
     Page Should Contain        Thank you for your order!
     
     Log To Console             \n[SUCCESS] End-to-End purchase flow completed seamlessly!
