@@ -12,8 +12,8 @@ Default Tags      e2e
 
 *** Test Cases ***
 Complete End To End Checkout Flow
-    [Documentation]    Executes a complete purchase flow from login to order confirmation.
-    [Tags]             smoke    checkout
+    [Documentation]     Executes a complete purchase flow from login to order confirmation.
+    [Tags]              smoke    checkout
     
     # Step 1: Login
     Login To SauceDemo         standard_user    secret_sauce
@@ -25,18 +25,18 @@ Complete End To End Checkout Flow
     
     # Step 3: Go to cart and proceed to checkout
     Go To Cart
-    Page Should Contain       Sauce Labs Backpack
+    Page Should Contain        Sauce Labs Backpack
     Wait Until Page Contains Element    id=checkout    timeout=15s
-    Click Element               id=checkout
+    Click Element                  id=checkout
     
     # Step 4: Fill customer details and continue
     Wait Until Page Contains Element    id=first-name    timeout=15s
-    Complete Checkout Form     Ahmed    Testing    12345
+    Complete Checkout Form    Ahmed    Testing    12345
     Page Should Contain        Checkout: Overview
     
     # Step 5: Finish order and verify success
     Wait Until Page Contains Element    id=finish    timeout=15s
-    Click Element               id=finish
+    Click Element                  id=finish
     Page Should Contain        Thank you for your order!
     
     Log To Console             \n[SUCCESS] End-to-End purchase flow completed seamlessly!
