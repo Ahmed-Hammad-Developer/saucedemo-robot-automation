@@ -12,9 +12,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: MUST be first so the repo files are downloaded to the runner workspace
       - name: Checkout Code
         uses: actions/checkout@v4
 
+      # Step 2: Now that files exist, Python setup and pip cache can find requirements.txt
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
