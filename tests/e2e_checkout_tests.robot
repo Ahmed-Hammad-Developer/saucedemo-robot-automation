@@ -26,6 +26,7 @@ Complete End To End Checkout Flow
     # Step 3: Go to cart and proceed to checkout
     Go To Cart
     Page Should Contain        Sauce Labs Backpack
+    Wait Until Element Is Visible    id=checkout    timeout=10s
     Click Button               id=checkout
     
     # Step 4: Fill customer details and continue
@@ -33,6 +34,7 @@ Complete End To End Checkout Flow
     Page Should Contain        Checkout: Overview
     
     # Step 5: Finish order and verify success
+    Wait Until Element Is Visible    id=finish    timeout=10s
     Click Button               id=finish
     Page Should Contain        Thank you for your order!
     
